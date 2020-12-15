@@ -4,14 +4,17 @@ import com.codeborne.selenide.junit.TextReport;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
-import org.openqa.selenium.By;
+
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LeasingTest {
+//ToDo: Store selectors in separate file to improve reusability/readablity
+//ToDo: Store input data in separate test data files
+
+public class _03_Leasing_Application_Test {
     @Rule
     public TestRule report = new TextReport().onFailedTest(true).onSucceededTest(true);
 
@@ -26,6 +29,7 @@ public class LeasingTest {
         $("#headermain").shouldBe(visible).shouldHave(text("Leasing, vehicle"));
     }
 
+    //ToDo: Add input for voluntary fields
     @Test
     public void _02_leasing_application_page_1_test() {
         open("https://e.seb.ee/ip/ipank.p?act=CRMCONTACT&topic_code=t_lseauto&pt=unknown&lang=ENG");
@@ -51,4 +55,7 @@ public class LeasingTest {
         $(byText("Next")).click();
         $(byTagName("h2")).shouldBe(visible).shouldHave(text("Data of applicant"));
     }
+    //ToDO: Other leasing pages up to application submission
+
+
 }
