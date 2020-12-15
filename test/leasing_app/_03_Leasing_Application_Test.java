@@ -20,7 +20,7 @@ public class _03_Leasing_Application_Test {
 
 
     @Test
-    public void _01_leasing_application_navigation_test() {
+    public void _01_Leasing_Application_Navigation_Buttons_Test() {
         open("http://www.seb.ee/eng/loan-and-leasing/leasing/car-leasing#calculator");
         $(byText("I agree")).click();
         $(".big").shouldBe(visible).shouldHave(text("Car leasing"));
