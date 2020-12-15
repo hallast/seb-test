@@ -26,7 +26,7 @@ public class _02_Max_Lease_Sum_Calc_Test {
         $(".-CS-apply-button").click();
         $(".-CS-aplication-button").click();
         switchTo().window(1);
-        $("#headermain").shouldBe(visible).shouldHave(text("Sõidukiliising"));
+        $("#headermain").shouldBe(visible).shouldHave(text("Sõidukiliising")); // Its a bug. Language parameter is missing from request and user is guided to Estonian language application page
         switchTo().window(0);
         $("#netoIncome").setValue("100");
         $(".-CS-negative-result").shouldBe(visible).shouldHave(text("We cannot provide financing with the entered data. Add a surety, if possible."));
